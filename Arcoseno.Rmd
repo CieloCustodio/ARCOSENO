@@ -1,0 +1,38 @@
+---
+title: "Arcoseno"
+author: "Cielo Del Rosario Custodio Vidal"
+date: "2023-09-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Definición y Características de la función arcoseno
+cat("El arcoseno (también conocido como inversa del seno) es una función que toma un valor en el rango [-1, 1] y devuelve un ángulo en radianes en el intervalo [-π/2, π/2].\n")
+$$
+y = \\arcsin(x)
+$$
+
+
+
+# Gráfico de la función arcoseno
+```{r}
+x <- seq(-1, 1, length = 100)
+y <- asin(x)
+y1 <- asin(2 * pmin(pmax(x, -1), 1))  # Limitar x al rango [-1, 1]
+plot(x, y, type = "l", main = "Función Arcoseno", xlim = c(-1, 1), xlab = "x", ylab = "Arcoseno", col = "blue")
+```
+
+# Tabla de valores
+```{r tablas}
+library(DT)
+tabla <- data.frame(x = x, arcsin1 = y, arcsin2 = y1)
+datatable(tabla)
+```
+
+
+
+
+
